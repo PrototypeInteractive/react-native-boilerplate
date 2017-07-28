@@ -1,0 +1,42 @@
+{
+  "name": "RNBoilerplate",
+  "version": "0.0.2",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "ios": "react-native run-ios",
+    "android": "react-native run-android",
+    "build:ios": "react-native run-ios --configuration Release",
+    "build:android": "react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/"
+  },
+  "dependencies": {
+    "immutability-helper": "^2.2.0",
+    "react": "^16.0.0-alpha.12",
+    "react-apollo": "^1.2.0",
+    "react-native": "^0.46.4",
+    "react-native-router-flux": "^4.0.0-beta.14",
+    "react-redux": "^5.0.5",
+    "redux": "^3.6.0",
+    "redux-persist": "^4.0.0-alpha7",
+    "redux-thunk": "^2.1.0"
+  },
+  "rnpm": {
+    "assets": [
+      "./app/assets"
+    ]
+  },
+  "devDependencies": {
+    "babel-jest": "^20.0.3",
+    "babel-preset-react-native": "^2.1.0",
+    "jest": "^20.0.4",
+    "react-test-renderer": "^15.5.4"
+  },
+  "jest": {
+    "preset": "react-native",
+    "testRegex": "./__tests__/[^setup].*.js$",
+    "setupFiles": [
+      "./__tests__/setup.js"
+    ]
+  }
+}
