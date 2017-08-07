@@ -1,5 +1,7 @@
 # React Native Boilerplate
 
+A lightweight react native boilerplate to get you up an running in no time.
+
 Brought to you by Prototype @wizards.
 
 ## What's needed
