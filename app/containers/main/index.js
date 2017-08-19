@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Text, View } from 'react-native';
 
-export default class Main extends Component {
-  render() {
-    return (
-      <View>
-        <Text>
+const Main = () => (
+  <View>
+    <Text>
          Main Screen
-        </Text>
-      </View>
-    );
-  }
-}
+    </Text>
+  </View>
+);
+
+
+export default Main;

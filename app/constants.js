@@ -1,1 +1,3 @@
-export const Settings = {}
+const Settings = {};
+
+export default Settings;
