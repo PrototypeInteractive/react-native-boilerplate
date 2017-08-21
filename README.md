@@ -8,7 +8,14 @@ Brought to you by Prototype @wizards.
 
 * [Node.js](http://nodejs.org)
 * [React](https://github.com/facebook/react) & [React Native](https://github.com/facebook/react-native)
-* [Redux](https://github.com/reactjs/redux)
+
+## What's included
+
+* [PropTypes](https://facebook.github.io/react/docs/typechecking-with-proptypes.html)
+* [Redux](https://github.com/reactjs/redux) with [redux-thunk](https://github.com/gaearon/redux-thunk) and [redux-persist](https://github.com/rt2zz/redux-persist)
+* [React native router flux](https://github.com/aksonov/react-native-router-flux)
+* [Immutability helper](https://github.com/kolodny/immutability-helper)
+* [React native SVG](https://github.com/react-native-community/react-native-svg)
 
 ## Start
 
@@ -69,10 +76,10 @@ $ npm test
 Signing key and password are available on the TW project.
 
 Run `npm run build:android`, Open `/android` in Android studio and follow the process of generating .apk
- 
+
 
 #### Build for iOS
- 
+
 Certificates and provisioning profiles for dev and prod are available on the TW project.
- 
-Open `/ios/.xcodeworkspace`, configure the certificates and follow the normal process of Releasing the app either for app store or for development deployment. 
+
+Open `/ios/.xcodeworkspace`, configure the certificates and follow the normal process of Releasing the app either for app store or for development deployment.

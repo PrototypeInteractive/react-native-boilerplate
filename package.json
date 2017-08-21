@@ -43,7 +43,9 @@
   "jest": {
     "preset": "react-native",
     "testRegex": "./__tests__/[^setup].*.js$",
-    "transformIgnorePatterns": ["node_modules/(?!react-native|native-base|react-navigation)"],
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|native-base|react-navigation)"
+    ],
     "setupFiles": [
       "./__tests__/setup.js"
     ]
