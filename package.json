@@ -1,6 +1,6 @@
 {
   "name": "RNBoilerplate",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "scripts": {
     "lint": "node_modules/.bin/eslint app --fix",
@@ -12,15 +12,15 @@
     "build:android": "react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/"
   },
   "dependencies": {
-    "immutability-helper": "^2.2.0",
+    "immutability-helper": "^2.3.1",
     "prop-types": "^15.5.10",
     "react": "^16.0.0-alpha.12",
-    "react-native": "^0.47.2",
-    "react-native-router-flux": "^4.0.0-beta.18",
+    "react-native": "^0.48.1",
+    "react-native-router-flux": "^4.0.0-beta.21",
     "react-native-svg": "^5.4.1",
-    "react-redux": "^5.0.5",
+    "react-redux": "^5.0.6",
     "redux": "^3.6.0",
-    "redux-persist": "^4.0.0-alpha7",
+    "redux-persist": "^4.9.1",
     "redux-thunk": "^2.1.0"
   },
   "rnpm": {
@@ -31,11 +31,11 @@
   "devDependencies": {
     "babel-jest": "^20.0.3",
     "babel-preset-react-native": "^2.1.0",
-    "eslint": "^4.5.0",
+    "eslint": "^4.6.1",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.2.1",
+    "eslint-plugin-react": "^7.3.0",
     "jest": "^20.0.4",
     "mocha": "^3.5.0",
     "react-test-renderer": "^16.0.0-alpha.12"
