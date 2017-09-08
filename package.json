@@ -1,8 +1,9 @@
 {
   "name": "RNBoilerplate",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "scripts": {
+    "react-devtools": "react-devtools",
     "lint": "node_modules/.bin/eslint app --fix",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
@@ -38,6 +39,7 @@
     "eslint-plugin-react": "^7.3.0",
     "jest": "^20.0.4",
     "mocha": "^3.5.0",
+    "react-devtools": "^2.5.0",
     "react-test-renderer": "^16.0.0-alpha.12"
   },
   "jest": {
