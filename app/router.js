@@ -7,7 +7,7 @@ import Header from './components/header';
 const RootRouter = () => (
   <Router>
     <Scene key="root" >
-      <Scene key="main" navBar={Header} component={Main} title="Main Screen" initial />
+      <Scene key="main" navBar={Header} component={Main} title="Main" initial />
     </Scene>
   </Router>
 );

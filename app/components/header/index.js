@@ -5,12 +5,13 @@ import { Actions } from 'react-native-router-flux';
 
 const styles = StyleSheet.create({
   header: {
-    height: 40,
-    marginTop: 20,
+    height: 60,
+    paddingTop: 20,
     backgroundColor: 'white',
   },
   text: {
     textAlign: 'center',
+    color: 'white'
   },
 });
 

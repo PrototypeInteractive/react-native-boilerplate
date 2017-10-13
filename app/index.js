@@ -5,7 +5,12 @@ import Router from './router';
 import configureStore from './reducers/configureStore';
 
 if (__DEV__) {
-  require('react-devtools');
+  try{
+    require('react-devtools');
+  }
+  catch(e){
+    console.log('react-devtools is not available')
+  }
 }
 
 const store = configureStore();
