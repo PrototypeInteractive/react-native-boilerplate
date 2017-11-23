@@ -1,0 +1,62 @@
+# More documentation about how to customize your build
+# can be found here:
+# https://docs.fastlane.tools
+fastlane_version "1.109.0"
+
+default_platform :ios
+
+before_each do |lane, options|
+  ensure_git_status_clean(
+    show_uncommitted_changes: true
+  )
+end
+
+platform :ios do
+  # Fastfile actions accept additional configuration, but
+  # don't worry, fastlane will prompt you for required
+  # info which you can add here later
+
+  lane :beta do
+     # build your iOS app
+     increment_build_number(xcodeproj: './ios/RNBoilerplate.xcodeproj')
+     increment_version_number(xcodeproj: './ios/RNBoilerplate.xcodeproj', bump_type: "minor")
+
+     gym(
+       scheme: "RNBoilerplate",
+       export_method: "development",
+       workspace: './ios/RNBoilerplate.xcworkspace'
+     )
+
+    commit_version_bump(
+      message: "Version Bump",
+      xcodeproj: "./ios/RNBoilerplate.xcodeproj",
+    )
+
+  end
+end
+
+platform :android do
+  # Fastfile actions accept additional configuration, but
+  # don't worry, fastlane will prompt you for required
+  # info which you can add here later
+
+  def increment_version_code(gradle_build: 'android/app/build.gradle')
+    sh %Q{cd ../ && echo "$(awk '{sub(/versionCode [[:digit:]]+$/,"versionCode "$2+1)}1' #{gradle_build})" > #{gradle_build} && cd -}
+  end
+
+  lane :beta do
+    increment_version_code gradle_build: 'android/app/build.gradle'
+
+    # build the release variant
+    gradle(
+      task: "assembleRelease",
+      project_dir: "android/"
+    )
+
+  end
+end
+
+after_each do |lane, options|
+  clean_build_artifacts
+  notification(subtitle: "Finished", message: "Fastlane finished '#{lane}' successfully")
+end
