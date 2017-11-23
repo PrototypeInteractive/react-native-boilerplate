@@ -73,15 +73,12 @@ $ npm test
 
 ## Release
 
-#### Build for android
+Releases are done via fastlane to avoid having to wait 15 minutes to open either xcode or android studio.
 
-Signing key and password are available on the TW project.
+* First start by [installing fastlane](https://docs.fastlane.tools/getting-started/ios/setup/).
+* Then make sure you set iOS and Android profiles and keys following this [tutorial](https://facebook.github.io/react-native/docs/running-on-device.html)
 
-Run `npm run build:android`, Open `/android` in Android studio and follow the process of generating .apk
+In the boilerplate, only beta release are configured
 
-
-#### Build for iOS
-
-Certificates and provisioning profiles for dev and prod are available on the TW project.
-
-Open `/ios/.xcodeworkspace`, configure the certificates and follow the normal process of Releasing the app either for app store or for development deployment.
+* For android, run `fastlane android beta`
+* For ios, run `fastlane ios beta`

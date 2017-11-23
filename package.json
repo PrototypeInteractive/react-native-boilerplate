@@ -1,6 +1,6 @@
 {
   "name": "RNBoilerplate",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": true,
   "scripts": {
     "react-devtools": "react-devtools",
@@ -10,7 +10,7 @@
     "ios": "react-native run-ios",
     "android": "react-native run-android",
     "build:ios": "react-native run-ios --configuration Release",
-    "build:android": "react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/"
+    "build:android": "react-native run-android --variant=release"
   },
   "dependencies": {
     "immutability-helper": "^2.4.0",

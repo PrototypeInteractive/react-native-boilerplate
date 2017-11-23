@@ -6,9 +6,9 @@ fastlane_version "1.109.0"
 default_platform :ios
 
 before_each do |lane, options|
-  ensure_git_status_clean(
-    show_uncommitted_changes: true
-  )
+  # ensure_git_status_clean(
+  #   show_uncommitted_changes: true
+  # )
 end
 
 platform :ios do
@@ -19,12 +19,11 @@ platform :ios do
   lane :beta do
      # build your iOS app
      increment_build_number(xcodeproj: './ios/RNBoilerplate.xcodeproj')
-     increment_version_number(xcodeproj: './ios/RNBoilerplate.xcodeproj', bump_type: "minor")
 
      gym(
        scheme: "RNBoilerplate",
        export_method: "development",
-       workspace: './ios/RNBoilerplate.xcworkspace'
+       project: './ios/RNBoilerplate.xcodeproj'
      )
 
     commit_version_bump(
