@@ -6,12 +6,16 @@ import { Actions } from 'react-native-router-flux';
 const styles = StyleSheet.create({
   header: {
     height: 60,
-    paddingTop: 20,
-    backgroundColor: 'white',
+    backgroundColor: '#fafafa',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
   },
   text: {
     textAlign: 'center',
-    color: 'white'
+    color: 'black',
+    paddingRight: 10,
+    fontSize: 16
   },
 });
 
