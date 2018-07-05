@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   header: {
     height: 60,
     backgroundColor: '#fafafa',
-    flexDirection: 'row',
+        flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between'
   },
@@ -15,8 +15,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'black',
     paddingRight: 10,
+    flexGrow: 1,
     fontSize: 16
   },
+  button:{
+    position: "absolute"
+  }
 });
 
 class Header extends Component {
@@ -27,7 +31,9 @@ class Header extends Component {
   render() {
     return (
       <View style={styles.header}>
-        <Button onPress={this.onBackPress} title="Back" />
+        <View style={styles.button} >
+          <Button onPress={this.onBackPress} title="Back" />
+        </View>
         <Text style={styles.text}>
           {this.props.title}
         </Text>
