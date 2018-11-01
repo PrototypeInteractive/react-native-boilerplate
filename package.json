@@ -15,8 +15,8 @@
   "dependencies": {
     "immutability-helper": "^2.8.1",
     "prop-types": "^15.6.2",
-    "react": "^16.5.0",
-    "react-native": "^0.57.0",
+    "react": "^16.6.0-alpha.8af6728",
+    "react-native": "^0.57.4",
     "react-native-router-flux": "^4.0.5",
     "react-native-svg": "^6.5.2",
     "react-redux": "^5.1.0",
