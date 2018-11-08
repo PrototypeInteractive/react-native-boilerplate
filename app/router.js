@@ -1,14 +1,21 @@
 import React from 'react';
-import { Router, Scene } from 'react-native-router-flux';
+import { createStackNavigator } from 'react-navigation';
+
 import Main from './containers/main';
+import Details from './containers/details';
 
 
-const RootRouter = () => (
-  <Router>
-    <Scene key="root" >
-      <Scene key="main" hideNavBar={true} component={Main} title="Main" initial />
-    </Scene>
-  </Router>
+const RootStack = createStackNavigator(
+  {
+    Main,
+    Details,
+  },
+  {
+    initialRouteName: 'Main',
+    navigationOptions: {
+      header: null,
+    },
+  },
 );
 
-export default RootRouter;
+export default RootStack;

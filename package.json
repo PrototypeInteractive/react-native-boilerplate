@@ -17,12 +17,8 @@
     "prop-types": "^15.6.2",
     "react": "^16.6.0-alpha.8af6728",
     "react-native": "^0.57.4",
-    "react-native-router-flux": "^4.0.5",
     "react-native-svg": "^6.5.2",
-    "react-redux": "^5.1.0",
-    "redux": "^3.7.2",
-    "redux-persist": "^4.10.2",
-    "redux-thunk": "^2.3.0"
+    "react-navigation": "^2.18.2"
   },
   "rnpm": {
     "assets": [
@@ -34,8 +30,8 @@
     "@babel/plugin-external-helpers": "^7.0.0",
     "babel-jest": "^23.6.0",
     "babel-preset-react-native": "^5.0.2",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",

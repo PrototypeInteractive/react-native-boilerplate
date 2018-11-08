@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Text, View, StyleSheet, Button } from 'react-native';
-import { Actions } from 'react-native-router-flux';
+import { withNavigation } from 'react-navigation';
 
 const styles = StyleSheet.create({
   header: {
@@ -19,20 +19,21 @@ const styles = StyleSheet.create({
     fontSize: 16
   },
   button:{
-    position: "absolute"
+    position: "absolute",
+    zIndex: 2
   }
 });
 
 class Header extends Component {
-  onBackPress() {
-    Actions.pop();
+  onBackPress = () => {
+    this.props.navigation.goBack();
   }
 
   render() {
     return (
       <View style={styles.header}>
         <View style={styles.button} >
-          <Button onPress={this.onBackPress} title="Back" />
+          {this.props.showBack && <Button onPress={this.onBackPress} title="Back" /> }
         </View>
         <Text style={styles.text}>
           {this.props.title}
@@ -45,7 +46,12 @@ class Header extends Component {
 
 Header.propTypes = {
   title: PropTypes.string.isRequired,
+  showBack: PropTypes.bool
 };
 
+Header.defaultProps = {
+  showBack: false
+}
 
-export default Header;
+
+export default withNavigation(Header);
