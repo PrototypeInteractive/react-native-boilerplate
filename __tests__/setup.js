@@ -1,45 +1,45 @@
-jest.mock('Linking', () => {
-    return {
-        addEventListener: jest.fn(),
-        removeEventListener: jest.fn(),
-        requestPermissions: jest.fn(),
-        openURL: jest.fn(),
-        canOpenURL: jest.fn(),
-        getInitialURL: jest.fn()
-    }
-});
+jest.useFakeTimers(); // For fixing Animation issues https://github.com/facebook/jest/issues/4359#issuecomment-413238977
+
+jest.mock('Linking', () => ({
+  addEventListener: jest.fn(),
+  removeEventListener: jest.fn(),
+  requestPermissions: jest.fn(),
+  openURL: jest.fn(),
+  canOpenURL: jest.fn(),
+  getInitialURL: jest.fn()
+}));
 
 jest.mock('react-native-svg', () => {
-  const React = require('react')
-  // eslint-disable-next-line no-undef
-  const ReactNativeSvg = jest.genMockFromModule('react-native-svg')
+  const ReactNativeSvg = jest.genMockFromModule('react-native-svg');
 
   const svgElementMockGenerator = (name, propTypes) => {
+    const React = require('React'); // eslint-disable-line
+
     function SvgMock() {
       return (
         React.createElement(name, null, null)
-      )
+      );
     }
 
-    SvgMock.displayName = name
-    SvgMock.propTypes = propTypes
+    SvgMock.displayName = name;
+    SvgMock.propTypes = propTypes;
 
-    return SvgMock
-  }
+    return SvgMock;
+  };
 
-  const Svg = svgElementMockGenerator('Svg', ReactNativeSvg.Svg.propTypes)
+  const Svg = svgElementMockGenerator('Svg', ReactNativeSvg.Svg.propTypes);
 
-  Svg.Rect = svgElementMockGenerator('Rect', ReactNativeSvg.Rect.propTypes)
+  Svg.Rect = svgElementMockGenerator('Rect', ReactNativeSvg.Rect.propTypes);
   Svg.LinearGradient = svgElementMockGenerator(
     'LinearGradient',
     ReactNativeSvg.LinearGradient.propTypes
-  )
-  Svg.Polygon = svgElementMockGenerator('Polygon', ReactNativeSvg.Path.propTypes)
-  Svg.Path = svgElementMockGenerator('Path', ReactNativeSvg.Path.propTypes)
-  Svg.Symbol = svgElementMockGenerator('Symbol', ReactNativeSvg.Symbol.propTypes)
-  Svg.Use = svgElementMockGenerator('Use', ReactNativeSvg.Use.propTypes)
-  Svg.Stop = svgElementMockGenerator('Stop', ReactNativeSvg.Stop.propTypes)
-  Svg.Defs = svgElementMockGenerator('Defs', ReactNativeSvg.Defs.propTypes)
+  );
+  Svg.Polygon = svgElementMockGenerator('Polygon', ReactNativeSvg.Path.propTypes);
+  Svg.Path = svgElementMockGenerator('Path', ReactNativeSvg.Path.propTypes);
+  Svg.Symbol = svgElementMockGenerator('Symbol', ReactNativeSvg.Symbol.propTypes);
+  Svg.Use = svgElementMockGenerator('Use', ReactNativeSvg.Use.propTypes);
+  Svg.Stop = svgElementMockGenerator('Stop', ReactNativeSvg.Stop.propTypes);
+  Svg.Defs = svgElementMockGenerator('Defs', ReactNativeSvg.Defs.propTypes);
 
-  return Svg
-})
+  return Svg;
+});
