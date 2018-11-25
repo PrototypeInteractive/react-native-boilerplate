@@ -1,24 +1,20 @@
 import React from 'react';
 import { AppRegistry } from 'react-native';
-import { Provider } from 'react-redux';
-import Router from './router';
-import configureStore from './reducers/configureStore';
+import { createStackNavigator } from 'react-navigation';
+
+import RootStack from './router';
 
 if (__DEV__) {
-  try{
+  try {
     require('react-devtools');
-  }
-  catch(e){
-    console.log('react-devtools is not available')
+  } catch (e) {
+    console.log('react-devtools is not available');
   }
 }
 
-const store = configureStore();
 
 const RNBoilerplate = () => (
-  <Provider store={store}>
-    <Router />
-  </Provider>
+  <RootStack />
 );
 
 AppRegistry.registerComponent('RNBoilerplate', () => RNBoilerplate);
