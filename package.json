@@ -7,6 +7,7 @@
     "lint": "node_modules/.bin/eslint app --fix",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
+    "test:clean": "jest --clearCache",
     "ios": "react-native run-ios",
     "android": "react-native run-android",
     "build:ios": "react-native run-ios --configuration Release",
@@ -15,8 +16,8 @@
   "dependencies": {
     "immutability-helper": "^2.8.1",
     "prop-types": "^15.6.2",
-    "react": "^16.6.0-alpha.8af6728",
-    "react-native": "^0.57.4",
+    "react": "^16.6.1",
+    "react-native": "^0.57.5",
     "react-native-svg": "^6.5.2",
     "react-navigation": "^2.18.2"
   },
@@ -26,27 +27,35 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.1.2",
+    "@babel/core": "^7.1.6",
     "@babel/plugin-external-helpers": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-decorators": "^7.1.6",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-async-to-generator": "^7.1.0",
+    "@babel/plugin-transform-flow-strip-types": "^7.1.6",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
     "babel-preset-react-native": "^5.0.2",
-    "eslint": "^5.8.0",
+    "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
-    "jest": "^21.2.1",
-    "metro-react-native-babel-preset": "^0.49.0",
+    "jest": "^23.6.0",
+    "metro-react-native-babel-preset": "^0.49.2",
     "mocha": "^4.1.0",
-    "react-devtools": "^3.4.2",
-    "react-test-renderer": "^16.6.0",
-    "schedule": "^0.4.0"
+    "react-devtools": "^3.4.3",
+    "react-test-renderer": "^16.6.3",
+    "regenerator-runtime": "^0.13.1",
+    "schedule": "^0.5.0"
   },
   "jest": {
     "preset": "react-native",
     "testRegex": "./__tests__/[^setup].*.js$",
     "transformIgnorePatterns": [
-      "node_modules/(?!react-native|native-base|react-navigation|mobx-react)"
+      "node_modules/(?!react-native|native-base|react-navigation|mobx-react|react-test-renderer)"
     ],
     "setupFiles": [
       "./__tests__/setup.js"
