@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Text, View, StyleSheet, Button,
+  Text, View, StyleSheet, Button
 } from 'react-native';
 import { withNavigation } from 'react-navigation';
+import { reactNavigationPropTypes } from '../../containers/shared/propTypes';
 
 const styles = StyleSheet.create({
   header: {
@@ -11,34 +12,38 @@ const styles = StyleSheet.create({
     backgroundColor: '#fafafa',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-between'
   },
   text: {
     textAlign: 'center',
     color: 'black',
     paddingRight: 10,
     flexGrow: 1,
-    fontSize: 16,
+    fontSize: 16
   },
   button: {
     position: 'absolute',
-    zIndex: 2,
-  },
+    zIndex: 2
+  }
 });
 
 class Header extends Component {
   onBackPress = () => {
-    this.props.navigation.goBack();
+    const { navigation } = this.props;
+
+    navigation.goBack();
   }
 
   render() {
+    const { showBack, title } = this.props;
+
     return (
       <View style={styles.header}>
         <View style={styles.button}>
-          {this.props.showBack && <Button onPress={this.onBackPress} title="Back" /> }
+          {showBack && <Button onPress={this.onBackPress} title="Back" /> }
         </View>
         <Text style={styles.text}>
-          {this.props.title}
+          {title}
         </Text>
       </View>
     );
@@ -47,12 +52,13 @@ class Header extends Component {
 
 
 Header.propTypes = {
+  ...reactNavigationPropTypes,
   title: PropTypes.string.isRequired,
-  showBack: PropTypes.bool,
+  showBack: PropTypes.bool
 };
 
 Header.defaultProps = {
-  showBack: false,
+  showBack: false
 };
 
 

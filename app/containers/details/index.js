@@ -8,22 +8,17 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
     alignItems: 'center',
-    justifyContent: 'center',
-  },
+    justifyContent: 'center'
+  }
 });
 
-
-class Details extends React.Component {
-  render() {
-    return (
-      <Screen title="Details" showBack>
-        <View style={styles.main}>
-          <Text>Details Screen</Text>
-        </View>
-      </Screen>
-    );
-  }
-}
+const Details = () => (
+  <Screen title="Details" showBack>
+    <View style={styles.main}>
+      <Text>Details Screen</Text>
+    </View>
+  </Screen>
+);
 
 
 export default Details;
