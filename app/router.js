@@ -1,4 +1,4 @@
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import Main from './containers/main';
 import Details from './containers/details';
@@ -11,10 +11,8 @@ const RootStack = createStackNavigator(
   },
   {
     initialRouteName: 'Main',
-    navigationOptions: {
-      header: null
-    }
+    headerMode: 'none'
   },
 );
 
-export default RootStack;
+export default createAppContainer(RootStack);

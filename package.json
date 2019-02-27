@@ -18,8 +18,9 @@
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-native": "^0.58.5",
+    "react-native-gesture-handler": "^1.0.16",
     "react-native-svg": "^6.5.2",
-    "react-navigation": "^2.18.2"
+    "react-navigation": "^3.3.2"
   },
   "rnpm": {
     "assets": [
