@@ -16,8 +16,8 @@
   "dependencies": {
     "immutability-helper": "^2.8.1",
     "prop-types": "^15.6.2",
-    "react": "^16.6.1",
-    "react-native": "^0.57.5",
+    "react": "^16.6.3",
+    "react-native": "^0.58.5",
     "react-native-svg": "^6.5.2",
     "react-navigation": "^2.18.2"
   },
